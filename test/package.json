@@ -1,6 +1,6 @@
 {
-    "name": "json-merge-loader",
-    "description": "json-merge loader module for webpack",
+    "name": "test",
+    "description": "test",
     "version": "1.0.0",
     "author": {
         "email": "seb@dsebastien.net",
@@ -15,7 +15,7 @@
         "type": "git",
         "url": "https://github.com/dsebastien/json-merge-loader.git"
     },
-    "private": false,
+    "private": true,
     "license": "MIT",
     "keywords": [
         "webpack",
@@ -30,11 +30,11 @@
         "url": "https://github.com/dsebastien/json-merge-loader.git"
     },
     "dependencies": {
+        "webpack": "1.13.2",
+        "raw-loader": "0.5.1"
     },
     "devDependencies": {
     },
-    "main": "index.js",
     "scripts": {
-        "test": ""
     }
 }

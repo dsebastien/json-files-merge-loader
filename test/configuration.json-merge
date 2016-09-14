@@ -1,0 +1,6 @@
+{
+    "files": [
+        "filesToMerge/file1.json",
+        "filesToMerge/file2.json"
+    ]
+}
