@@ -1,7 +1,7 @@
 {
-    "name": "json-merge-loader",
-    "description": "json-merge loader module for webpack",
-    "version": "1.0.0",
+    "name": "json-files-merge-loader",
+    "description": "json-files-merge loader module for webpack",
+    "version": "1.1.0",
     "author": {
         "email": "seb@dsebastien.net",
         "name": "dSebastien",
@@ -9,11 +9,11 @@
     },
     "contributors": [
     ],
-    "homepage": "https://github.com/dsebastien/json-merge-loader",
-    "bugs": "https://github.com/dsebastien/json-merge-loader/issues",
+    "homepage": "https://github.com/dsebastien/json-files-merge-loader",
+    "bugs": "https://github.com/dsebastien/json-files-merge-loader/issues",
     "repository": {
         "type": "git",
-        "url": "https://github.com/dsebastien/json-merge-loader.git"
+        "url": "https://github.com/dsebastien/json-files-merge-loader.git"
     },
     "private": false,
     "license": "MIT",
@@ -27,7 +27,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/dsebastien/json-merge-loader.git"
+        "url": "https://github.com/dsebastien/json-files-merge-loader.git"
     },
     "dependencies": {
         "merge": "~1.2.0",

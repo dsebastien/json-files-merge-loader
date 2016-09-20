@@ -25,30 +25,30 @@ function loadEntriesData(files, debug){
     let entriesData = [];
 
     if(debug === true) {
-        console.log("json-merge-loader: loading entries data for "+files);
+        console.log("json-files-merge-loader: loading entries data for "+files);
     }
     
     for(let entry of files){
         if(debug === true) {
-            console.log("json-merge-loader: loading entry data for "+entry);
+            console.log("json-files-merge-loader: loading entry data for "+entry);
         }
         
         if(typeof entry !== "string"){
-            throw new Error("Entries in the files array of the file given to the json-merge-loader must be string objects!");
+            throw new Error("Entries in the files array of the file given to the json-files-merge-loader must be string objects!");
         }
 
         entry = entry.trim();
 
         if(entry.length === 0){
-            throw new Error("Entries in the files array of the file given to the json-merge-loader cannot be empty!");
+            throw new Error("Entries in the files array of the file given to the json-files-merge-loader cannot be empty!");
         }
 
         if(entry.startsWith("/")){
-            throw new Error("Entries in the files array of the file given to the json-merge-loader must define a relative path!");
+            throw new Error("Entries in the files array of the file given to the json-files-merge-loader must define a relative path!");
         }
 
         if(!entry.endsWith(".json") && !entry.endsWith(".JSON")){
-            throw new Error("Entries in the files array of the file given to the json-merge-loader must be json files (file extension check)");
+            throw new Error("Entries in the files array of the file given to the json-files-merge-loader must be json files (file extension check)");
         }
 
         let entryPath = root(entry);
@@ -58,15 +58,15 @@ function loadEntriesData(files, debug){
         try{
             entryData = fs.readFileSync(entryPath, 'utf8');
             if(debug === true) {
-                console.log("json-merge-loader: loaded entry data: "+entryData);
+                console.log("json-files-merge-loader: loaded entry data: "+entryData);
             }
         } catch(e){
-            console.error("One of the entries in the files array given to the json-merge-loader is not accessible (does not exist, unreadable, ...): " + entryPath);
+            console.error("One of the entries in the files array given to the json-files-merge-loader is not accessible (does not exist, unreadable, ...): " + entryPath);
             throw e;
         }
 
         if(!entryData){
-            throw new Error("One of the entries in the files array given to the json-merge-loader could not be read: " + entryPath);
+            throw new Error("One of the entries in the files array given to the json-files-merge-loader could not be read: " + entryPath);
         }
 
         // try to get a JSON object from the file data
@@ -75,16 +75,16 @@ function loadEntriesData(files, debug){
         try{
             entryDataAsJSON = JSON.parse(entryData);
         } catch(e){
-            console.error("One of the entries in the files array given to the json-merge-loader could not be parsed as a JSON object; it is probably not well formed! File in error: " + entryPath);
+            console.error("One of the entries in the files array given to the json-files-merge-loader could not be parsed as a JSON object; it is probably not well formed! File in error: " + entryPath);
             throw e;
         }
 
         if(typeof entryDataAsJSON !== 'object'){
-            throw new Error("One of the entries in the files array given to the json-merge-loader is not a JSON file. The json-merge-loader can only merge JSON files! File in error: " + entryPath);
+            throw new Error("One of the entries in the files array given to the json-files-merge-loader is not a JSON file. The json-files-merge-loader can only merge JSON files! File in error: " + entryPath);
         }
 
         if(debug === true) {
-            console.log("json-merge-loader: entry data successfully parsed as a JSON object");
+            console.log("json-files-merge-loader: entry data successfully parsed as a JSON object");
         }
 
         // let's put the data aside for now
@@ -107,18 +107,18 @@ module.exports = function (source) {
     }
 
     if(debug === true) {
-        console.log("json-merge-loader: debug enabled");
+        console.log("json-files-merge-loader: debug enabled");
     }
     
-    // Load the json-merge-loader configuration
+    // Load the json-files-merge-loader configuration
     this.cacheable && this.cacheable(); // the result of this loader can be cached
 
     if(typeof source !== "string"){
-        throw new Error("The input given to the json-merge-loader must be a string!");
+        throw new Error("The input given to the json-files-merge-loader must be a string!");
     }
 
     if(debug === true) {
-        console.log("json-merge-loader: configuration contents: ",source);
+        console.log("json-files-merge-loader: configuration contents: ",source);
     }
 
     let sourceAsJSON = {};
@@ -126,36 +126,36 @@ module.exports = function (source) {
     try{
         sourceAsJSON = JSON.parse(source);
     } catch(e){
-        console.error("The file given to the json-merge-loader couldn't be parsed as a JSON object; it is probably not well formed!");
+        console.error("The file given to the json-files-merge-loader couldn't be parsed as a JSON object; it is probably not well formed!");
         throw e;
     }
 
     if(typeof sourceAsJSON !== 'object'){
-        throw new Error("The file given to the json-merge-loader is not a JSON file. The json-merge-loader requires a json configuration file!");
+        throw new Error("The file given to the json-files-merge-loader is not a JSON file. The json-files-merge-loader requires a json configuration file!");
     }
 
     if(debug === true) {
-        console.log("json-merge-loader: successfully parsed the configuration file as a JSON object");
+        console.log("json-files-merge-loader: successfully parsed the configuration file as a JSON object");
     }
 
     if(!sourceAsJSON.hasOwnProperty("files")){
-        throw new Error("The file given to the json-merge-loader must have a files property!");
+        throw new Error("The file given to the json-files-merge-loader must have a files property!");
     }
 
     if(debug === true) {
-        console.log("json-merge-loader: the configuration file contains the 'files' key as required");
+        console.log("json-files-merge-loader: the configuration file contains the 'files' key as required");
     }
 
     if(sourceAsJSON.files.constructor !== Array){
-        throw new Error("The files property in the file given to the json-merge-loader must be an array!");
+        throw new Error("The files property in the file given to the json-files-merge-loader must be an array!");
     }
 
     if(debug === true) {
-        console.log("json-merge-loader: the 'files' key is an array as required");
+        console.log("json-files-merge-loader: the 'files' key is an array as required");
     }
 
     if(sourceAsJSON.files.length === 0){
-        throw new Error("The files property in the file given to the json-merge-loader must contain at least one entry!");
+        throw new Error("The files property in the file given to the json-files-merge-loader must contain at least one entry!");
     }
 
     // will hold the data of all entries we load
@@ -167,18 +167,18 @@ module.exports = function (source) {
     for(let entryData of entriesData){
 
         if(debug === true) {
-            console.log("json-merge-loader: about to merge ("+JSON.stringify(mergedContents)+") with ("+JSON.stringify(entryData)+")");
+            console.log("json-files-merge-loader: about to merge ("+JSON.stringify(mergedContents)+") with ("+JSON.stringify(entryData)+")");
         }
         
         mergedContents = merge(mergedContents, entryData);
         if(debug === true) {
-            console.log("json-merge-loader: merge result: "+JSON.stringify(mergedContents));
+            console.log("json-files-merge-loader: merge result: "+JSON.stringify(mergedContents));
         }
     }
 
     if(debug === true) {
-        console.log("json-merge-loader: finished merging all files. End result: " + mergedContents);
-        console.log("json-merge-loader: wrapping the merged contents in a cjs module");
+        console.log("json-files-merge-loader: finished merging all files. End result: " + mergedContents);
+        console.log("json-files-merge-loader: wrapping the merged contents in a cjs module");
     }
     
     // wrap the merged contents in an array
@@ -188,7 +188,7 @@ module.exports = function (source) {
     let retVal = "module.exports = " + JSON.stringify(mergedContents, undefined, "\t") + ";";
 
     if(debug === true) {
-        console.log("json-merge-loader: finished wrapping the merged contents in a cjs module: "+retVal);
+        console.log("json-files-merge-loader: finished wrapping the merged contents in a cjs module: "+retVal);
     }
     
     return retVal;
