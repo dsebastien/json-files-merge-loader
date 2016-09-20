@@ -9,11 +9,11 @@
     },
     "contributors": [
     ],
-    "homepage": "https://github.com/dsebastien/json-merge-loader",
-    "bugs": "https://github.com/dsebastien/json-merge-loader/issues",
+    "homepage": "https://github.com/dsebastien/json-files-merge-loader",
+    "bugs": "https://github.com/dsebastien/json-files-merge-loader/issues",
     "repository": {
         "type": "git",
-        "url": "https://github.com/dsebastien/json-merge-loader.git"
+        "url": "https://github.com/dsebastien/json-files-merge-loader.git"
     },
     "private": true,
     "license": "MIT",
@@ -27,7 +27,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/dsebastien/json-merge-loader.git"
+        "url": "https://github.com/dsebastien/json-files-merge-loader.git"
     },
     "dependencies": {
         "webpack": "1.13.2",

@@ -21,7 +21,7 @@ module.exports = {
                 test: /\.json-merge$/,
                 loaders: [
                     "raw-loader",
-                    "json-merge-loader",
+                    "json-files-merge-loader",
                 ]
             }
         ],
@@ -36,6 +36,6 @@ module.exports = {
 // for test harness purposes only, you would not need this in a normal project
 module.exports.resolveLoader = { 
     alias: { 
-        "json-merge-loader": require('path').join(__dirname, "../index.js")
+        "json-files-merge-loader": require('path').join(__dirname, "../index.js")
     }
 };
