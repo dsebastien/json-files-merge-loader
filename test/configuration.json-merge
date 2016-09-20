@@ -1,6 +1,7 @@
 {
     "files": [
-        "filesToMerge/file1.json",
-        "filesToMerge/file2.json"
+        "test/filesToMerge/file1.json",
+        "test/filesToMerge/file2.json",
+        "test/filesToMerge/file3.json"
     ]
 }

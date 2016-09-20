@@ -30,11 +30,14 @@
         "url": "https://github.com/dsebastien/json-merge-loader.git"
     },
     "dependencies": {
+        "merge": "~1.2.0",
+        "loader-utils": "~0.2.16"
     },
     "devDependencies": {
     },
     "main": "index.js",
     "scripts": {
+        "setup": "npm install --no-optional",
         "test": ""
     }
 }

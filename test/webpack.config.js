@@ -1,3 +1,7 @@
+/*
+ MIT License http://www.opensource.org/licenses/mit-license.php
+ Author Sebastien Dubois @dSebastien
+ */
 "use strict";
 
 // Webpack config
@@ -21,6 +25,11 @@ module.exports = {
                 ]
             }
         ],
+    },
+
+    // (optional) configuration of the JSON Merge Loader
+    jsonMergeLoader: {
+        debug: false,
     },
 };
 

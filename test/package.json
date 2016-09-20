@@ -36,5 +36,7 @@
     "devDependencies": {
     },
     "scripts": {
+        "webpack": "webpack",
+        "test": "webpack"
     }
 }

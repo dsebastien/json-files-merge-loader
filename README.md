@@ -1,7 +1,9 @@
 # json-merge loader for webpack
 
 ## About
-This plugin provides a way to merge multiple configuration files and retrieve the result as a JSON object.
+This plugin provides a way to merge multiple configuration files and retrieve the result as a JSON object. The JSON files are merged using https://www.npmjs.com/package/merge
+
+
 This loader expects to receive a configuration JSON object with the following format:
 
 ```
@@ -13,6 +15,7 @@ This loader expects to receive a configuration JSON object with the following fo
 ```
 
 Each file listed in the `files` array must be a JSON file.
+The path for each file must be a relative path starting from the root of your application module (e.g., src/filesToMerge/file1.json)
 
 ## Installation
 
@@ -41,6 +44,29 @@ loaders: [
 
 Don't forget to polyfill `require` if you want to use it in node.
 See `webpack` documentation.
+
+## Configuration
+You can configure the JSON Merge Loader in your webpack configuration:
+
+```
+"use strict";
+
+// Webpack config
+module.exports = {
+    ...
+
+    // (optional) configuration of the JSON Merge Loader
+    jsonMergeLoader: {
+        debug: true,
+        ...
+    },
+};
+
+```
+
+Supported options:
+* debug (true|false): verbose output
+** TIP: by default, the "debug" property of the Webpack configuration is used, but you can override the value for this loader
 
 ## License
 
