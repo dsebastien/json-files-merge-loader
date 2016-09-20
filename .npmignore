@@ -3,6 +3,7 @@ dist/
 build/
 __build__/
 .tmp/
+test
 stats.json
 
 # Sourcemaps
