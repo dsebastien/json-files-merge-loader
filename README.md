@@ -1,5 +1,7 @@
 # json-files-merge loader for webpack
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/dsebastien/json-files-merge-loader.svg)](https://greenkeeper.io/)
+
 ## About
 This plugin provides a way to merge multiple configuration files and retrieve the result as a JSON object. The JSON files are merged using https://www.npmjs.com/package/merge
 
