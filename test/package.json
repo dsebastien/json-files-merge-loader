@@ -30,7 +30,7 @@
         "url": "https://github.com/dsebastien/json-files-merge-loader.git"
     },
     "dependencies": {
-        "webpack": "1.13.2",
+        "webpack": "4.10.2",
         "raw-loader": "0.5.1"
     },
     "devDependencies": {
