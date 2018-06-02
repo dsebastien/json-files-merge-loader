@@ -31,7 +31,7 @@
     },
     "dependencies": {
         "merge": "~1.2.0",
-        "loader-utils": "~0.2.16"
+        "loader-utils": "~1.1.0"
     },
     "devDependencies": {
     },
